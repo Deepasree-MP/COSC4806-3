@@ -23,7 +23,7 @@ class Create extends Controller
                 try {
                     $user = new User();
                     $user->create_user($username, $password);
-                    $message = "User created successfully.";
+                  $message = "Account created successfully. Your user ID is $username.<br><a href='/logout'>Click here to login</a>";
                 } catch (Exception $e) {
                     $message = $e->getMessage();
                 }
