@@ -53,11 +53,11 @@ class User
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function authenticate($username, $password) {
+    /*public function authenticate($username, $password) {
         /*
          * if username and password good then
          * $this->auth = true;
-         */
+         *
     $username = strtolower($username);
     $db = db_connect();
         $statement = $db->prepare("select * from users WHERE username = :name;");
@@ -80,5 +80,19 @@ class User
       header('Location: /login');
       die;
     }
-    }
+    }*/
+
+  public function authenticate($username, $password)
+  {
+      $username = strtolower($username);
+      $statement = $this->db->prepare("SELECT * FROM users WHERE username = :name");
+      $statement->bindValue(':name', $username);
+      $statement->execute();
+      $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+      if ($user && password_verify($password, $user['password'])) {
+          return $user;
+      }
+      return false;
+  }
 }
