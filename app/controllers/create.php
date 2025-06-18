@@ -22,14 +22,19 @@ class Create extends Controller
             } else {
                 try {
                     $user = new User();
-                    $user->create_user($username, $password);
-                  $message = "Account created successfully. Your user ID is $username.<br><a href='/logout'>Click here to login</a>";
+
+                    if ($user->user_exists($username)) {
+                        $message = "<span style='color:red;'>Account cannot be created. Username already exists.</span>";
+                    } else {
+                        $user_id = $user->create_user($username, $password);
+                        $message = "Account created successfully. Your user ID is $user_id.<br><a href='/logout'>Click here to login</a>";
+                    }
                 } catch (Exception $e) {
-                    $message = $e->getMessage();
+                    $message = "Error: " . $e->getMessage();
                 }
             }
         }
 
-        require_once 'app/views/create/index.php';
+        $this->view('create/index', ['message' => $message]);
     }
 }

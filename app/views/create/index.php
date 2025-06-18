@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create User</title>
+    <title>Create an Account</title>
 </head>
 <body>
-    <h2>Create User</h2>
+    <h2>Create an Account</h2>
     <form method="post">
         Username: <input type="text" name="username"><br><br>
         Password: <input type="password" name="password"><br><br>

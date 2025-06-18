@@ -10,6 +10,12 @@
 
 			<div class="row">
 					<div class="col-sm-auto">
+						<?php if (isset($_SESSION['error_message'])): ?>
+								<div class="alert alert-danger">
+										<?= htmlspecialchars($_SESSION['error_message']) ?>
+								</div>
+								<?php unset($_SESSION['error_message']); ?>
+						<?php endif; ?>
 							<form action="/login/verify" method="post">
 									<fieldset>
 											<div class="form-group">
