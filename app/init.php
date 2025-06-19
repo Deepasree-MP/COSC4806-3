@@ -4,8 +4,8 @@ error_reporting(0);
 ini_set('session.gc_maxlifetime', 28800);
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 1);
-//$sessionCookieExpireTime = 28800; // 8hrs
-$sessionCookieExpireTime = 10; // 10 seconds
+$sessionCookieExpireTime = 28800; // 8hrs
+//$sessionCookieExpireTime = 10; // 10 seconds
 session_set_cookie_params($sessionCookieExpireTime);
 session_start();
 
