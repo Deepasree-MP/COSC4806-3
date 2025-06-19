@@ -26,7 +26,9 @@ class Login extends Controller {
 
 			if ($authUser) {
 					$_SESSION['auth'] = 1;
-					$_SESSION['username'] = $username;
+					$_SESSION['username'] = ucwords($username);
+				//echo $username . "-" . $password;
+				//die;
 					unset($_SESSION['failedAuth']);
 					header('Location: /home');
 					die;
