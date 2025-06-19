@@ -1,8 +1,9 @@
 <?php
-session_start(); 
+
 class Login extends Controller {
 
     public function index() {		
+			session_start(); 
 	    $this->view('login/index');
     }
     
