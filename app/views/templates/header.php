@@ -53,17 +53,27 @@
         -->
 
         <!-- Navbar for Pearl CSS (Active) -->
-        <nav class="nav p-2 border-bottom bg-light">
+        <nav class="bg-light border-bottom py-2">
           <div class="container flex justify-between items-center">
-            <h4><a href="/" class="nav-brand text-bold">COSC 4806</a></h4>
-            <ul class="flex gap-3 list-none m-0">
-              <li><a href="/home" class="link">Home</a></li>
-              <li><a href="/about" class="link">About Me</a></li>
-              <li><a href="#" class="link">Dropdown</a></li>
-              <li><a href="#" class="link disabled">Disabled</a></li>
+            <a href="/" class="text-xl font-bold text-dark">COSC 4806</a>
+
+            <ul class="flex gap-4 m-0 list-none">
+              <li><a href="/home" class="text-dark text-semibold hover-underline">Home</a></li>
+              <li><a href="/about" class="text-dark text-semibold hover-underline">About Me</a></li>
+              <li class="relative group">
+                <a href="#" class="text-dark text-semibold hover-underline">Dropdown</a>
+                <ul class="absolute hidden group-hover:block bg-white shadow-md mt-1 rounded p-2">
+                  <li><a class="block px-3 py-1 hover-bg-light" href="#">Action</a></li>
+                  <li><a class="block px-3 py-1 hover-bg-light" href="#">Another action</a></li>
+                  <li class="border-t my-1"></li>
+                  <li><a class="block px-3 py-1 hover-bg-light" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li><span class="text-muted">Disabled</span></li>
             </ul>
           </div>
         </nav>
+
 
         <!-- Navbar for Bootstrap -->
         <!--
