@@ -30,45 +30,8 @@
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" href="/favicon.png">
         <title>COSC 4806</title>
-
-          <!-- Responsive Navbar Style -->
-          <style>
-            .text-xl { font-size: 1.25rem; }
-            .font-bold { font-weight: bold; }
-            .text-muted { color: #888; }
-            .hidden { display: none; }
-            .block { display: block; }
-            .flex { display: flex; }
-            .gap-3 { gap: 0.75rem; }
-            .gap-4 { gap: 1rem; }
-            .flex-col { flex-direction: column; }
-            .flex-row { flex-direction: row; }
-            .justify-between { justify-content: space-between; }
-            .items-center { align-items: center; }
-            .mt-2 { margin-top: 0.5rem; }
-            .mt-0 { margin-top: 0; }
-
-            @media (min-width: 768px) {
-              .md\:flex { display: flex; }
-              .md\:hidden { display: none; }
-              .md\:flex-row { flex-direction: row; }
-              .md\:mt-0 { margin-top: 0; }
-              .md\:gap-4 { gap: 1rem; }
-            }
-
-            nav a:hover {
-              text-decoration: underline;
-            }
-
-            .nav-toggle {
-              background: none;
-              border: none;
-              font-size: 1.5rem;
-              cursor: pointer;
-            }
-          </style>
-        </head>
-        <body>
+      </head>
+      <body>
 
         <!-- Navbar for Skeleton CSS -->
         <!--
@@ -90,24 +53,26 @@
         -->
 
         <!-- Navbar for Pearl CSS (Active) -->
-          <nav class="bg-light border-bottom p-2">
-            <div class="container flex justify-between items-center">
-              <a href="/" class="text-xl font-bold text-dark">COSC 4806</a>
+        <nav class="bg-light border-bottom py-2">
+          <div class="container flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-dark">COSC 4806</a>
 
-              <!-- Hamburger for small screens -->
-              <button class="nav-toggle md:hidden" onclick="document.getElementById('nav-menu').classList.toggle('hidden')">
-                ☰
-              </button>
-
-              <!-- Navigation links -->
-              <ul id="nav-menu" class="flex flex-col md:flex md:flex-row gap-3 md:gap-4 mt-2 md:mt-0 hidden md:flex">
-                <li><a href="/home" class="link">Home</a></li>
-                <li><a href="/about" class="link">About Me</a></li>
-                <li><a href="#" class="link">Dropdown</a></li>
-                <li><a href="#" class="link text-muted">Disabled</a></li>
-              </ul>
-            </div>
-          </nav>
+            <ul class="flex gap-4 m-0 list-none">
+              <li><a href="/home" class="text-dark text-semibold hover-underline">Home</a></li>
+              <li><a href="/about" class="text-dark text-semibold hover-underline">About Me</a></li>
+              <li class="relative group">
+                <a href="#" class="text-dark text-semibold hover-underline">Dropdown</a>
+                <ul class="absolute hidden group-hover:block bg-white shadow-md mt-1 rounded p-2">
+                  <li><a class="block px-3 py-1 hover-bg-light" href="#">Action</a></li>
+                  <li><a class="block px-3 py-1 hover-bg-light" href="#">Another action</a></li>
+                  <li class="border-t my-1"></li>
+                  <li><a class="block px-3 py-1 hover-bg-light" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li><span class="text-muted">Disabled</span></li>
+            </ul>
+          </div>
+        </nav>
 
 
         <!-- Navbar for Bootstrap -->
